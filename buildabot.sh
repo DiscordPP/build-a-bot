@@ -2,6 +2,13 @@
 
 IFS=$'\n'
 
+echo "Enter a project name: "
+read project
+
+for i in CMakeLists.txt .github/workflows/main.yml Dockerfile; do
+    sed -i "s/BUILDABOT_PROJECT_NAME/$project/g" $i
+done
+
 if ! command -v jq &> /dev/null; then
     if [ ! -f "./jq" ]; then
 	wget -O jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64;
@@ -33,6 +40,7 @@ for category in $(cat selection.json | $jq -r 'keys_unsorted[]'); do
 		    break;
 		done
 	        git submodule add -b $branch --name $name -- https://github.com/$owner/$name.git lib/$name
+		sed -i 's///g' CMakeLists.txt
 	    fi
 	    break
 	done
