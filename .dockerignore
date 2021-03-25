@@ -1,0 +1,5 @@
+# Just the bare essentials 
+**
+!lib/**
+!CMakeLists.txt
+!main.cc
