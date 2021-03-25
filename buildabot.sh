@@ -40,7 +40,20 @@ for category in $(cat selection.json | $jq -r 'keys_unsorted[]'); do
 		    break;
 		done
 	        git submodule add -b $branch --name $name -- https://github.com/$owner/$name.git lib/$name
-		sed -i 's///g' CMakeLists.txt
+
+		include=$(cat selection.json | $jq -r ".\"$category\".choice.\"$choice\".include")
+		class=$(cat selection.json | $jq -r ".\"$category\".choice.\"$choice\".class")
+
+		[[ $class == "null" ]] && class = ""
+		
+		for i in include.hh extern.cc; do
+		    sed -i "s/BUILDABOT_INCLUDE/#include <$include>\nBUILDABOT_INCLUDE/g" $i
+		    [[ $class ]]
+			&& sed -i "s/BUILDABOT_BEGIN/BUILDABOT_BEGIN$class</g" $i
+			&& sed -i "s/BUILDABOT_TEMPLATE_END/>BUILDABOT_TEMPLATE_END/g" $i
+		done
+		sed -i "s/BUILDABOT_SUBDIR/add_subdirectory(lib/$name)\nBUILDABOT_SUBDIR/g" CMakeLists.txt
+		sed -i "s/BUILDABOT_TLL/discordpp${name:+-}$name\n        BUILDABOT_TLL/g" CMakeLists.txt
 	    fi
 	    break
 	done
