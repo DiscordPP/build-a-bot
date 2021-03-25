@@ -1,0 +1,63 @@
+{
+    "Discord++": {
+	"single": true,
+	"choice": {
+	    "Default": {
+		"owner": "DiscordPP",
+		"name": "discordpp"
+	    }
+	}
+    },
+    "WebSocket": {
+	"single": true,
+	"choice": {
+	    "SimpleWeb": {
+		"owner": "DiscordPP",
+		"name": "websocket-simpleweb"
+	    }
+	}
+    },
+    "REST": {
+	"single": true,
+	"choice": {
+	    "Boost Beast": {
+		"owner": "DiscordPP",
+		"name": "rest-beast"
+	    }
+	}
+    },
+    "Ratelimiter": {
+	"single": true,
+	"choice": {
+	    "Default": {
+		"owner": "DiscordPP",
+		"name": "plugin-ratelimit"
+	    }
+	}
+    },
+    "Plugin": {
+	"single": false,
+	"choice": {
+	    "Overload": {
+		"owner": "DiscordPP",
+		"name": "plugin-overload"
+	    },
+	    "Responder": {
+		"owner": "DiscordPP",
+		"name": "plugin-responder"
+	    },
+	    "Endpoints": {
+		"owner": "DiscordPP",
+		"name": "plugin-endpoints"
+	    },
+	    "Constructs": {
+		"owner": "DiscordPP",
+		"name": "plugin-constructs"
+	    },
+	    "AnyHandler": {
+		"owner": "DiscordPP",
+		"name": "plugin-anyhandler"
+	    }
+	}
+    }
+}
