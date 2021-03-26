@@ -78,3 +78,7 @@ sed -i "/BUILDABOT_TLL/d" CMakeLists.txt
 
 git submodule update --init --recursive
 
+rm selection.json
+rm buildabot.sh
+
+echo Done!
