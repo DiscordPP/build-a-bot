@@ -1,5 +1,7 @@
 #! /usr/bin/bash
 
+pushd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+
 IFS=$'\n'
 nl=$'\n'
 
@@ -82,3 +84,5 @@ rm selection.json
 rm buildabot.sh
 
 git commit -a -m "Customized Template" --author "Build-A-Bot <>"
+
+popd
