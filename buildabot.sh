@@ -54,7 +54,7 @@ for category in $(cat selection.json | $jq -r 'keys_unsorted[]'); do
 			&& sed -i "s|BUILDABOT_TEMPLATE_END|>BUILDABOT_TEMPLATE_END|g" $i
 		done
 		sed -i "s|BUILDABOT_SUBDIR|add_subdirectory(lib/${name})\\${nl}BUILDABOT_SUBDIR|g" CMakeLists.txt
-		[[ $class == "discordpp" ]] \
+		[[ $name == "discordpp" ]] \
 		    && sed -i "s|BUILDABOT_TLL|discordpp\\${nl}        BUILDABOT_TLL|g" CMakeLists.txt \
 		    || sed -i "s|BUILDABOT_TLL|discordpp-$name\\${nl}        BUILDABOT_TLL|g" CMakeLists.txt
 	    fi
@@ -64,11 +64,17 @@ for category in $(cat selection.json | $jq -r 'keys_unsorted[]'); do
 	$isdone && break
     done
 
-    #TODO remove tokens
-
     echo
     echo
 done
+
+for i in include.hh extern.cc; do
+    sed -i "/BUILDABOT_INCLUDE/d" $i
+    sed -i "s/BUILDABOT_TEMPLATE_BEGIN//g" $i
+    sed -i "s/BUILDABOT_TEMPLATE_END//g" $i
+done
+sed -i "/BUILDABOT_SUBDIR/d" CMakeLists.txt
+sed -i "/BUILDABOT_TLL/d" CMakeLists.txt
 
 git submodule update --init --recursive
 
