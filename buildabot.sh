@@ -81,4 +81,4 @@ git submodule update --init --recursive
 rm selection.json
 rm buildabot.sh
 
-echo Done!
+git commit -a -m "Customized Template" --author "Build-A-Bot <>"
