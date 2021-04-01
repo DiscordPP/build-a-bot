@@ -69,12 +69,6 @@
 		"name": "plugin-constructs",
 		"include": "discordpp/plugin-constructs.hh",
 		"class": "discordpp::PluginConstructs"
-	    },
-	    "AnyHandler": {
-		"owner": "DiscordPP",
-		"name": "plugin-anyhandler",
-		"include": "discordpp/plugin-anyhandler.hh",
-		"class": "discordpp::PluginAnyHandler"
 	    }
 	}
     }
