@@ -56,7 +56,7 @@
 		"owner": "DiscordPP",
 		"name": "plugin-responder",
 		"include": "discordpp/plugin-responder.hh",
-		"class": "discordpp::PluginOverload"
+		"class": "discordpp::PluginResponder"
 	    },
 	    "Endpoints": {
 		"owner": "DiscordPP",
