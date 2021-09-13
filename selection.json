@@ -63,12 +63,6 @@
 		"name": "plugin-endpoints",
 		"include": "discordpp/plugin-endpoints.hh",
 		"class": "discordpp::PluginEndpoints"
-	    },
-	    "Constructs": {
-		"owner": "DiscordPP",
-		"name": "plugin-constructs",
-		"include": "discordpp/plugin-constructs.hh",
-		"class": "discordpp::PluginConstructs"
 	    }
 	}
     }
