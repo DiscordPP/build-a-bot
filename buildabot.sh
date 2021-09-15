@@ -86,6 +86,6 @@ if [ -f "./jq" ]; then
     rm ./jq
 fi
 
-git commit -a -m "Customized Template" --author "Build-A-Bot <>"
+git commit -a -m "Customized Build-A-Bot Template" --author "Build-A-Bot <>"
 
 popd
