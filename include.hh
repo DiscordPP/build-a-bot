@@ -4,6 +4,10 @@
 
 #pragma once
 
+#include <discordpp/macros.hh>
+
+#define MY_BOT_DEF BOT_DEF(ALL_DISCORDPP_PLUGINS)
+
 #ifndef DPPBOT_EXTERN
 
 #include <fstream>
@@ -22,8 +26,8 @@ BUILDABOT_INCLUDE
 
 #ifndef DPPBOT_EXTERN
 
-extern template class BUILDABOT_TEMPLATE_BEGINdiscordpp::BotBUILDABOT_TEMPLATE_END;
-using DppBot = BUILDABOT_TEMPLATE_BEGINdiscordpp::BotBUILDABOT_TEMPLATE_END;
+extern template class MY_BOT_DEF;
+using DppBot = MY_BOT_DEF;
 
 #undef DPPBOT_EXTERN
 

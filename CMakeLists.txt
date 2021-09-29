@@ -1,9 +1,14 @@
 cmake_minimum_required(VERSION 3.16)
 project(BUILDABOT_PROJECT_NAME)
 
+message(FATAL_ERROR "Please run buildabot.sh")
+
 set(CMAKE_CXX_STANDARD 17)
 
-BUILDABOT_SUBDIR
+#BUILDABOT_SUBDIR
+
+list(JOIN ALL_DISCORDPP_PLUGINS , ALL_DISCORDPP_PLUGINS_JOINED)
+add_compile_definitions(ALL_DISCORDPP_PLUGINS=${ALL_DISCORDPP_PLUGINS_JOINED})
 
 set(SOURCE_FILES main.cc extern.cc)
 add_executable(${PROJECT_NAME} ${SOURCE_FILES})
@@ -33,7 +38,7 @@ TARGET_LINK_LIBRARIES(
         ${Boost_LIBRARIES}
         Threads::Threads
         ${OPENSSL_LIBRARIES}
-        BUILDABOT_TLL
+        ${ALL_DISCORDPP_LIBRARIES}
 )
 
 if (EXISTS ${CMAKE_SOURCE_DIR}/token.dat)
