@@ -26,7 +26,12 @@
 		"owner": "DiscordPP",
 		"name": "rest-beast",
 		"include": "discordpp/rest-beast.hh"
-	    }
+	    },
+		"SimpleWeb": {
+			"owner": "DiscordPP",
+			"name": "rest-simpleweb",
+			"include": "discordpp/rest-simpleweb.hh"
+		}
 	}
     },
     "Ratelimiter": {
