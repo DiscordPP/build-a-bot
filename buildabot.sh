@@ -60,9 +60,9 @@ done
 
 for i in include.hh extern.cc; do
     sed -i "/BUILDABOT_INCLUDE/d" $i
-    sed -i "/\nmessage(FATAL_ERROR \"Please run buildabot.sh\")\n/d" $i
 done
 sed -i "/#BUILDABOT_SUBDIR/d" CMakeLists.txt
+sed -i "/message(FATAL_ERROR \"Please run buildabot.sh\")/d" CMakeLists.txt
 
 git submodule update --init --recursive
 

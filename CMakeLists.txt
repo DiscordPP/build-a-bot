@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
 project(BUILDABOT_PROJECT_NAME)
-
 message(FATAL_ERROR "Please run buildabot.sh")
 
 set(CMAKE_CXX_STANDARD 17)
