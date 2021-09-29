@@ -38,7 +38,7 @@ for category in $(cat selection.json | $jq -r 'keys_unsorted[]'); do
 	    else
 		owner=$(cat selection.json | $jq -r ".\"$category\".choice.\"$choice\".owner")
 		name=$(cat selection.json | $jq -r ".\"$category\".choice.\"$choice\".name")
-	        select branch in $(wget -O - https://api.github.com/repos/$owner/$name/branches | $jq -r ".[].name"); do
+	        select branch in "master" $(wget -O - https://api.github.com/repos/$owner/$name/branches | $jq -r ".[].name" | sed '/^master$/d'); do
 		    [ $branch ] || continue
 		    break;
 		done
