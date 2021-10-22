@@ -16,22 +16,27 @@
 		"owner": "DiscordPP",
 		"name": "websocket-simpleweb",
 		"include": "discordpp/websocket-simpleweb.hh"
-	    }
+	    },
+	    "Boost Beast (unstable)": {
+		"owner": "DiscordPP",
+		"name": "websocket-beast",
+		"include": "discordpp/websocket-beast.hh"
+	    },
 	}
     },
     "REST": {
 	"single": true,
 	"choice": {
+	    "SimpleWeb": {
+		"owner": "DiscordPP",
+		"name": "rest-simpleweb",
+		"include": "discordpp/rest-simpleweb.hh"
+	    },
 	    "Boost Beast": {
 		"owner": "DiscordPP",
 		"name": "rest-beast",
 		"include": "discordpp/rest-beast.hh"
-	    },
-		"SimpleWeb": {
-			"owner": "DiscordPP",
-			"name": "rest-simpleweb",
-			"include": "discordpp/rest-simpleweb.hh"
-		}
+	    }
 	}
     },
     "Ratelimiter": {
