@@ -47,6 +47,16 @@
     "Plugin": {
 	"single": false,
 	"choice": {
+	    "Endpoints": {
+		"owner": "DiscordPP",
+		"name": "plugin-endpoints",
+		"include": "discordpp/plugin-endpoints.hh"
+	    },
+	    "Objects": {
+		"owner": "DiscordPP",
+		"name": "plugin-objects",
+		"include": "discordpp/plugin-objects.hh"
+	    },
 	    "Overload": {
 		"owner": "DiscordPP",
 		"name": "plugin-overload",
@@ -56,11 +66,6 @@
 		"owner": "DiscordPP",
 		"name": "plugin-responder",
 		"include": "discordpp/plugin-responder.hh"
-	    },
-	    "Endpoints": {
-		"owner": "DiscordPP",
-		"name": "plugin-endpoints",
-		"include": "discordpp/plugin-endpoints.hh"
 	    }
 	}
     }
