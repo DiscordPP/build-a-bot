@@ -60,7 +60,7 @@ int main() {
     auto aioc = std::make_shared<asio::io_context>();
 
     // Set the bot up
-    bot->initBot(6, token, aioc);
+    bot->initBot(9, token, aioc);
 
     // Run the bot!
     bot->run();
