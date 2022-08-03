@@ -58,9 +58,6 @@ for category in $(cat selection.json | $jq -r 'keys_unsorted[]'); do
     echo
 done
 
-for i in include.hh extern.cc; do
-    sed -i "/BUILDABOT_INCLUDE/d" $i
-done
 sed -i "/#BUILDABOT_SUBDIR/d" CMakeLists.txt
 sed -i "/message(FATAL_ERROR \"Please run buildabot.sh\")/d" CMakeLists.txt
 

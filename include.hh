@@ -14,15 +14,17 @@
 #include <iostream>
 #include <regex>
 
+#ifdef ASIO_STANDALONE
+#include <asio.hpp>
+#else
 #include <boost/asio.hpp>
+#endif
 
 // Put more non-plugin `include`s here
 
 #endif
 
-BUILDABOT_INCLUDE
-
-// Put more D++ plugin `include`s here
+#include <discordpp.hh>
 
 #ifndef DPPBOT_EXTERN
 

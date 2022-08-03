@@ -52,16 +52,16 @@
     "Plugin": {
 	"single": false,
 	"choice": {
-	    "Endpoints": {
-		"owner": "DiscordPP",
-		"name": "plugin-endpoints",
-		"include": "discordpp/plugin-endpoints.hh"
-	    },
-	    "Objects": {
-		"owner": "DiscordPP",
-		"name": "plugin-objects",
-		"include": "discordpp/plugin-objects.hh"
-	    },
+		"* Native (Recommended)": {
+			"owner": "DiscordPP",
+			"name": "plugin-native",
+			"include": "discordpp/plugin-native.hh"
+		},
+		"Interaction Handler": {
+			"owner": "DiscordPP",
+			"name": "plugin-interactionhandler",
+			"include": "discordpp/plugin-interactionhandler.hh"
+		},
 	    "Overload": {
 		"owner": "DiscordPP",
 		"name": "plugin-overload",
