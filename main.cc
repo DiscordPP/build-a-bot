@@ -1,6 +1,8 @@
 #include "include.hh"
 
+#ifndef ASIO_STANDALONE
 namespace asio = boost::asio;
+#endif
 using json = nlohmann::json;
 namespace dpp = discordpp;
 
@@ -50,9 +52,9 @@ int main() {
     the future.
      * The `self` object contains all information about the 'bot' user.
     /*/
-    json self;
+    dpp::User self;
     bot->handlers.insert(
-        {"READY", [&self](json data) { self = data["user"]; }});
+        {"READY", [&self](dpp::Ready ready) { self = *ready.user; }});
 
     // TODO Define your handlers here
 

@@ -17,7 +17,9 @@ target_precompile_headers(${PROJECT_NAME} PUBLIC ${PROJECT_SOURCE_DIR}/include.h
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 
-find_package(Boost 1.71.0 REQUIRED system date_time)
+if(${DISCORDPP_USE_BOOST})
+    find_package(Boost 1.71.0 REQUIRED system date_time)
+endif()
 find_package(Threads REQUIRED)
 find_package(OpenSSL REQUIRED)
 
@@ -25,8 +27,8 @@ if(WIN32)
     add_definitions(-D_WIN32_WINNT=0x0601) # Windows 7
 endif()
 
-if (MSVC)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /bigobj /wd4250 /wd4244")
+if(MSVC)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /bigobj /wd4250 /wd4244 /Zc:preprocessor")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /bigobj")
     add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 else()
