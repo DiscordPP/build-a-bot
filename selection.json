@@ -1,77 +1,77 @@
 {
-    "Discord++": {
-	"single": true,
-	"choice": {
-	    "Default": {
-		"owner": "DiscordPP",
-		"name": "discordpp",
-		"include": "discordpp/bot.hh"
-	    }
-	}
-    },
-    "WebSocket": {
-	"single": true,
-	"choice": {
-	    "SimpleWeb": {
-		"owner": "DiscordPP",
-		"name": "websocket-simpleweb",
-		"include": "discordpp/websocket-simpleweb.hh"
-	    },
-	    "Boost Beast (unstable)": {
-		"owner": "DiscordPP",
-		"name": "websocket-beast",
-		"include": "discordpp/websocket-beast.hh"
-	    },
-	}
-    },
-    "REST": {
-	"single": true,
-	"choice": {
-	    "SimpleWeb": {
-		"owner": "DiscordPP",
-		"name": "rest-simpleweb",
-		"include": "discordpp/rest-simpleweb.hh"
-	    },
-	    "Boost Beast": {
-		"owner": "DiscordPP",
-		"name": "rest-beast",
-		"include": "discordpp/rest-beast.hh"
-	    }
-	}
-    },
-    "Ratelimiter": {
-	"single": true,
-	"choice": {
-	    "Default": {
-		"owner": "DiscordPP",
-		"name": "plugin-ratelimit",
-		"include": "discordpp/plugin-ratelimit.hh"
-	    }
-	}
-    },
-    "Plugin": {
-	"single": false,
-	"choice": {
-		"* Native (Recommended)": {
-			"owner": "DiscordPP",
-			"name": "plugin-native",
-			"include": "discordpp/plugin-native.hh"
-		},
-		"Interaction Handler": {
-			"owner": "DiscordPP",
-			"name": "plugin-interactionhandler",
-			"include": "discordpp/plugin-interactionhandler.hh"
-		},
-	    "Overload": {
-		"owner": "DiscordPP",
-		"name": "plugin-overload",
-		"include": "discordpp/plugin-overload.hh"
-	    },
-	    "Responder": {
-		"owner": "DiscordPP",
-		"name": "plugin-responder",
-		"include": "discordpp/plugin-responder.hh"
-	    }
-	}
+  "Discord++": {
+    "single": true,
+    "choice": {
+      "Default": {
+        "owner": "DiscordPP",
+        "name": "discordpp",
+        "include": "discordpp/bot.hh"
+      }
     }
+  },
+  "WebSocket": {
+    "single": true,
+    "choice": {
+      "SimpleWeb": {
+        "owner": "DiscordPP",
+        "name": "websocket-simpleweb",
+        "include": "discordpp/websocket-simpleweb.hh"
+      },
+      "Boost Beast (unstable)": {
+        "owner": "DiscordPP",
+        "name": "websocket-beast",
+        "include": "discordpp/websocket-beast.hh"
+      }
+    }
+  },
+  "REST": {
+    "single": true,
+    "choice": {
+      "SimpleWeb": {
+        "owner": "DiscordPP",
+        "name": "rest-simpleweb",
+        "include": "discordpp/rest-simpleweb.hh"
+      },
+      "Boost Beast": {
+        "owner": "DiscordPP",
+        "name": "rest-beast",
+        "include": "discordpp/rest-beast.hh"
+      }
+    }
+  },
+  "Ratelimiter": {
+    "single": true,
+    "choice": {
+      "Default": {
+        "owner": "DiscordPP",
+        "name": "plugin-ratelimit",
+        "include": "discordpp/plugin-ratelimit.hh"
+      }
+    }
+  },
+  "Plugin": {
+    "single": false,
+    "choice": {
+      "* Native (Recommended)": {
+        "owner": "DiscordPP",
+        "name": "plugin-native",
+        "include": "discordpp/plugin-native.hh"
+      },
+      "Interaction Handler": {
+        "owner": "DiscordPP",
+        "name": "plugin-interactionhandler",
+        "include": "discordpp/plugin-interactionhandler.hh"
+      },
+      "Overload": {
+        "owner": "DiscordPP",
+        "name": "plugin-overload",
+        "include": "discordpp/plugin-overload.hh"
+      },
+      "Responder": {
+        "owner": "DiscordPP",
+        "name": "plugin-responder",
+        "include": "discordpp/plugin-responder.hh"
+      }
+    }
+  }
 }
